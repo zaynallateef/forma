@@ -16,17 +16,6 @@ Documents made simple. PDF tools and local OCR, with no account required.
 
 Files are processed in your browser. No backend, API key, or external LLM is required. OCR assets are served with the site; the host may receive ordinary connection metadata. Download results before refreshing or closing the page.
 
-## Run locally
-
-Node.js 22.12 or later is required.
-
-```bash
-npm install
-npm run dev
-```
-
-Build for static hosting with `npm run build`. Deploy the complete `dist/` folder. No environment variables are required; `.env.example` contains an optional public GitHub link setting.
-
 ## Limits
 
 - 20 MB per file, 50 MB combined input, and up to 150 PDF pages or images. Additional image and output limits protect browser memory.
