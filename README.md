@@ -23,32 +23,6 @@ Document processing runs in your browser. Files and extracted content are not se
 
 Results are temporary. Download your work before closing or refreshing the page.
 
-## Run locally
-
-Use Node.js 22.12 or later. Node.js 24 was used during development.
-
-```bash
-npm install
-npm run dev
-```
-
-Installation prepares the local OCR and PDF assets automatically. No environment variables are required. `.env.example` documents the optional public `VITE_GITHUB_URL` setting for a repository link; never put secrets in `VITE_` variables.
-
-## Development
-
-Built with React, TypeScript, Vite, Tailwind CSS, PDF.js, pdf-lib, Tesseract.js, and JSZip. PDF manipulation and OCR use browser workers.
-
-```bash
-npm run typecheck
-npm run lint
-npm test
-npx playwright install chromium
-npm run test:e2e
-npm run build
-npm run preview
-```
-
-Source code is in `src/`, browser tests and synthetic fixtures are in `tests/`, and asset preparation is in `scripts/`. Technical notes are in `docs/`.
 
 ## Limits
 
@@ -59,11 +33,3 @@ Source code is in `src/`, browser tests and synthetic fixtures are in `tests/`, 
 - Password-protected PDFs, Office conversion, and searchable-PDF OCR export are not supported.
 - PDF editing may lose forms, bookmarks, attachments, metadata, or digital signatures. It is not a redaction tool.
 - Automated browser tests cover Chromium. Other browsers and physical devices need further testing.
-
-## Deployment
-
-The website is hosted on Cloudflare Pages. Build with `npm run build` and deploy the complete `dist/` folder, including the generated OCR and PDF assets.
-
-For a Git-based Pages build, use `npm run build`, output directory `dist`, and `NODE_VERSION=24`. Generated assets and build output are excluded from this repository and recreated during installation and building.
-
-See [deployment](docs/DEPLOYMENT.md), [architecture](docs/ARCHITECTURE.md), [privacy](docs/PRIVACY.md), [verification](docs/VERIFICATION.md), and [roadmap](docs/ROADMAP.md) for details.
